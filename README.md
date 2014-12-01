@@ -17,10 +17,10 @@ Create a C♯₂ note:
 
     let note = Note(name: .C, octave: 2, sharp: true)
 
-Get C♯₂ major chord (C♯₂, F♯₂ and G♯₂ notes):
+Get a major chord (C♯₂, F♯₂, G♯₂) for C♯₂ note:
 
     let chord = note.majorChord
     
-Get chord progression (3 chords × 3 notes) for C♯₂:
+Get a chord progression (3 chords × 3 notes) for C♯₂:
 
     let chordProgression = note.chordProgression
