@@ -15,12 +15,18 @@ Rachmaninoff is a simple library for working with music theory in Swift.
 
 Create a C♯₂ note:
 
-    let note = Note(name: .C, octave: 2, sharp: true)
+```swift
+let note = Note(name: .C, octave: 2, sharp: true)
+```
 
 Get a major chord (C♯₂, F♯₂, G♯₂) for C♯₂ note:
 
-    let chord = note.majorChord
+```swift
+let chord = note.majorChord
+```
     
 Get a chord progression (3 chords × 3 notes) for C♯₂:
 
-    let chordProgression = note.chordProgression
+```swift
+let chordProgression = note.chordProgression
+```
