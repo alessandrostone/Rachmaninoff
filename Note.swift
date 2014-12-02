@@ -134,6 +134,8 @@ extension Note {
 
 extension Note {
     
+    static let notesPerChord = 3
+    
     var majorChord: [Note] {
         
         switch (name, sharp) {
@@ -237,6 +239,8 @@ extension Note {
 //
 
 extension Note {
+    
+    static let chordsPerProgression = 3
     
     var chordProgression: [Note] {
         
