@@ -1,4 +1,3 @@
-//
 // The MIT License (MIT)
 //
 // Copyright (c) 2015 Rudolf Adamkovič
@@ -20,14 +19,10 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-//
 
 import Foundation
 
-//
-// MARK: -
 // MARK: Note
-//
 
 enum NoteName: String {
     
@@ -97,10 +92,7 @@ extension Note: Printable {
     
 }
 
-//
-// MARK: -
 // MARK: Octave
-//
 
 extension Note {
     
@@ -127,10 +119,7 @@ extension Note {
     
 }
 
-//
-// MARK: -
 // MARK: Chord
-//
 
 extension Note {
     
@@ -138,105 +127,106 @@ extension Note {
     
     var majorChord: [Note] {
         
+        let majorChord: [Note]
+        
         switch (name, sharp) {
             
         case (.C, false):
-            return [
+            majorChord = [
                 Note(name: .C, octave: octave, sharp: false),
                 Note(name: .E, octave: octave, sharp: false),
                 Note(name: .G, octave: octave, sharp: false)
             ]
             
         case (.C, true):
-            return [
+            majorChord = [
                 Note(name: .C, octave: octave, sharp: true),
                 Note(name: .F, octave: octave, sharp: false),
                 Note(name: .G, octave: octave, sharp: true)
             ]
             
         case (.D, false):
-            return [
+            majorChord = [
                 Note(name: .D, octave: octave, sharp: false),
                 Note(name: .F, octave: octave, sharp: true),
                 Note(name: .A, octave: octave, sharp: false)
             ]
             
         case (.D, true):
-            return [
+            majorChord = [
                 Note(name: .D, octave: octave, sharp: true),
                 Note(name: .G, octave: octave, sharp: false),
                 Note(name: .A, octave: octave, sharp: true)
             ]
             
         case (.E, _):
-            return [
+            majorChord = [
                 Note(name: .E, octave: octave, sharp: false),
                 Note(name: .G, octave: octave, sharp: true),
                 Note(name: .B, octave: octave, sharp: false)
             ]
             
         case (.F, false):
-            return [
+            majorChord = [
                 Note(name: .F, octave: octave, sharp: false),
                 Note(name: .A, octave: octave, sharp: false),
                 Note(name: .C, octave: octave + 1, sharp: false)
             ]
             
         case (.F, true):
-            return [
+            majorChord = [
                 Note(name: .F, octave: octave, sharp: true),
                 Note(name: .A, octave: octave, sharp: true),
                 Note(name: .C, octave: octave + 1, sharp: true)
             ]
             
         case (.G, false):
-            return [
+            majorChord = [
                 Note(name: .G, octave: octave, sharp: false),
                 Note(name: .B, octave: octave, sharp: false),
                 Note(name: .D, octave: octave + 1, sharp: false)
             ]
             
         case (.G, true):
-            return [
+            majorChord = [
                 Note(name: .G, octave: octave, sharp: true),
                 Note(name: .C, octave: octave + 1, sharp: false),
                 Note(name: .D, octave: octave + 1, sharp: true)
             ]
             
         case (.A, false):
-            return [
+            majorChord = [
                 Note(name: .A, octave: octave, sharp: false),
                 Note(name: .C, octave: octave + 1, sharp: true),
                 Note(name: .E, octave: octave + 1, sharp: false)
             ]
             
         case (.A, true):
-            return [
+            majorChord = [
                 Note(name: .A, octave: octave, sharp: true),
                 Note(name: .D, octave: octave + 1, sharp: false),
                 Note(name: .F, octave: octave + 1, sharp: false)
             ]
             
         case (.B, false):
-            return [
+            majorChord = [
                 Note(name: .B, octave: octave, sharp: false),
                 Note(name: .D, octave: octave + 1, sharp: true),
                 Note(name: .F, octave: octave + 1, sharp: true)
             ]
             
         default:
-            assertionFailure()
+            preconditionFailure()
             
         }
+        
+        return majorChord
         
     }
     
 }
 
-//
-// MARK: -
 // MARK: Chord Progression
-//
 
 extension Note {
     
@@ -244,96 +234,100 @@ extension Note {
     
     var chordProgression: [Note] {
         
+        let chordProgression: [Note]
+        
         switch (name, sharp) {
             
         case (.C, false):
-            return [
+            chordProgression = [
                 Note(name: .C, octave: octave, sharp: false),
                 Note(name: .F, octave: octave, sharp: false),
                 Note(name: .G, octave: octave, sharp: false)
             ]
             
         case (.C, true):
-            return [
+            chordProgression = [
                 Note(name: .C, octave: octave, sharp: true),
                 Note(name: .F, octave: octave, sharp: true),
                 Note(name: .G, octave: octave, sharp: true)
             ]
             
         case (.D, false):
-            return [
+            chordProgression = [
                 Note(name: .D, octave: octave, sharp: false),
                 Note(name: .G, octave: octave, sharp: false),
                 Note(name: .A, octave: octave, sharp: false)
             ]
             
         case (.D, true):
-            return [
+            chordProgression = [
                 Note(name: .D, octave: octave, sharp: true),
                 Note(name: .G, octave: octave, sharp: true),
                 Note(name: .A, octave: octave, sharp: true)
             ]
             
         case (.E, _):
-            return [
+            chordProgression = [
                 Note(name: .E, octave: octave, sharp: false),
                 Note(name: .A, octave: octave, sharp: false),
                 Note(name: .B, octave: octave, sharp: false)
             ]
             
         case (.F, false):
-            return [
+            chordProgression = [
                 Note(name: .F, octave: octave, sharp: false),
                 Note(name: .A, octave: octave, sharp: true),
                 Note(name: .C, octave: octave + 1, sharp: false)
             ]
             
         case (.F, true):
-            return [
+            chordProgression = [
                 Note(name: .F, octave: octave, sharp: true),
                 Note(name: .B, octave: octave, sharp: false),
                 Note(name: .C, octave: octave + 1, sharp: true)
             ]
             
         case (.G, false):
-            return [
+            chordProgression = [
                 Note(name: .G, octave: octave, sharp: false),
                 Note(name: .C, octave: octave + 1, sharp: false),
                 Note(name: .D, octave: octave + 1, sharp: false)
             ]
             
         case (.G, true):
-            return [
+            chordProgression = [
                 Note(name: .G, octave: octave, sharp: true),
                 Note(name: .C, octave: octave + 1, sharp: true),
                 Note(name: .D, octave: octave + 1, sharp: true)
             ]
             
         case (.A, false):
-            return [
+            chordProgression = [
                 Note(name: .A, octave: octave, sharp: false),
                 Note(name: .D, octave: octave + 1, sharp: false),
                 Note(name: .E, octave: octave + 1, sharp: false)
             ]
             
         case (.A, true):
-            return [
+            chordProgression = [
                 Note(name: .A, octave: octave, sharp: true),
                 Note(name: .D, octave: octave + 1, sharp: true),
                 Note(name: .F, octave: octave + 1, sharp: false)
             ]
     
         case (.B, _):
-            return [
+            chordProgression = [
                 Note(name: .B, octave: octave, sharp: false),
                 Note(name: .E, octave: octave + 1, sharp: false),
                 Note(name: .F, octave: octave + 1, sharp: true)
             ]
             
         default:
-            assertionFailure()
+            preconditionFailure()
             
         }
+        
+        return chordProgression
         
     }
     
