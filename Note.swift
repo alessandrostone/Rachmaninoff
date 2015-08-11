@@ -44,7 +44,7 @@ struct Note {
     
     init(name: NoteName, octave: Int, sharp: Bool) {
         
-        assert(contains(-1...9, octave))
+        assert((-1...9).contains(octave))
         
         assert(name != .E || sharp == false)
         assert(name != .B || sharp == false)
@@ -82,7 +82,7 @@ func ==(lhs: Note, rhs: Note) -> Bool {
     
 }
 
-extension Note: Printable {
+extension Note: CustomStringConvertible {
     
     var description: String {
         
